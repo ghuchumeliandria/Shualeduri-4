@@ -26,7 +26,20 @@ main {
   flex-direction: column;
   gap: 24px;
 }
+/* ---------------------------------------------------------DARK MODE STYLES ----------------------------------------- */
 
+.white-font{
+  color: #fff;
+}
+.btn-bg{
+  background: #0079FF;
+}
+.body-bg{
+  background: #141D2F;
+}
+.content-bg{
+  background: #1E2A47;
+}
 /* -----------------------------------------------------------HEADER---------------------------------------------------- */
 
 header {
@@ -167,6 +180,7 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 .profile-img img {
   border-radius: 50%;
   width: 117px;
