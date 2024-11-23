@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>Document</title>
   </head>
   <body>
     <main>
       <!-- Header Section -->
       <header>
-        <h1 class="header-logo">devfinder</h1>
+        <h1 class="header-logo" >devfinder</h1>
         <button class="day-mode" id="modeBtn">
           <p class="day-mode-paragraph">DARK</p>
           <!-- <img src="./images/moon.png" alt="moon" class="day-mode-img" /> -->
@@ -47,18 +48,18 @@
               <div class="github-username-text">
                 <h1 class="username" id="username">Endriux_24</h1>
                 <p class="date frst-date" id="date">Joined 25 Jan 2011</p>
-                <p class="nickname scnd-nickname" >@octocat</p>
+                <p class="nickname scnd-nickname" id="secondNickname" >@octocat</p>
             </div>
             <div class="bio-side">
                   <p class="nickname frst-nickname" id="nickname">@octocat</p>
-                  <p class="date scnd-date">Joined 25 Jan 2011</p>
+                  <p class="date scnd-date" id="secondDate">Joined 25 Jan 2011</p>
                   <p class="first-bio bio" id="bio"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                   </p>
                 </div>
                   </div>
             </div>
             <div class="github-description">
-              <p class="scnd-bio bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+              <p class="scnd-bio bio" id="secondBio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
                 <div class="follow-side">
                     <div class="follow-box">
                         <div class="follow-paragraph">Repos</div>
@@ -76,22 +77,22 @@
                 <div class="github-footer">
                     <div class="footer-box">
                         <div class="box">
-                            <img src="./images/location.png" alt="location">
-                            <p id="location">San Francisco</p>
+                          <i class="fa-solid fa-location-dot"></i>
+                            <p id="location" class="color">San Francisco</p>
                         </div>
                         <div class="box">
-                            <img src="./images/unknow.png" alt="unknow">
-                            <p class="link" id="link">https://github.blog</p>
+                            <div class="forever"></div>
+                            <p class="link color" id="link">https://github.blog</p>
                         </div>
                     </div>
                     <div class="footer-box">
                         <div class="box">
-                            <img src="./images/twitter.png" alt="twitter">
-                            <p id="twitterUser">Not Available</p>
+                          <i class="fa-brands fa-twitter"></i>
+                            <p id="twitterUser" class="color">Not Available</p>
                         </div>
                         <div class="box">
-                            <img src="./images/building.png" alt="building">
-                            <p id="@git">@github</p>
+                            <div class="building"></div>
+                            <p id="@git" class="color">@github</p>
                         </div>
                     </div>
                 </div>

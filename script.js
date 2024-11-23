@@ -13,7 +13,11 @@ const locationT = document.getElementById("location");
 const twitterUser = document.getElementById("twitterUser");
 const link = document.getElementById("link");
 const git = document.getElementById("@git");
+const secondDate = document.getElementById("secondDate")
+const secondBio = document.getElementById("secondBio")
+const secondNickname = document.getElementById("secondNickname")
 let modeBtn = document.getElementById("modeBtn");
+
 
 async function getData() {
   try {
@@ -23,16 +27,20 @@ async function getData() {
     username.textContent = user.name;
     profilePic.src = user.avatar_url;
     nickname.textContent = `@${user.login}`;
+    secondNickname.textContent = `@${user.login}`;
     date.textContent = user.created_at;
+    secondDate.textContent = user.created_at
     repos.textContent = user.public_repos;
     follower.textContent = user.followers;
     following.textContent = user.following;
     link.textContent = "Not available";
     git.textContent = "Not available";
-    if (user.bio == null) {
+    if (user.bio == null ) {
       bio.textContent = "This profile has no bio";
+      secondBio.textContent = "This profile has no bio"
     } else {
       bio.textContent = user.bio;
+      secondBio.textContent = user.bio
     }
     if (user.location == null) {
       locationT.textContent = "Not Available";
@@ -65,28 +73,23 @@ function errorText() {
     invalidText.style.display = "none";
   }
 }
+// let getItem = JSON.parse(localStorage.getItem("PageMode"));
+// console.log(getItem);
 
-modeBtn.addEventListener("click", () => {
-  let setTheme = document.body
 
-  setTheme.classList.toggle("dark-mode")
-  let theme;
-  if(setTheme.classList.contains("dark-mode")){
-    console.log("dark-mode")
-    theme = "DARK"
-  }else{
-    theme = "WHITE"
-    console.log("white")
-  }
-  localStorage.setItem("PageMode" , JSON.stringify(theme))
-});
-let getItem = JSON.parse(localStorage.getItem("PageMode"))
-console.log(getItem)
-// let getItem = JSON.parse(localStorage.getItem("key"))
-// console.log(getItem)
-// if(getItem == "DARK"){
-//     document.body.style.backgroundColor = "black"
 
-if(getItem === "DARK"){
-  document.body.classList = "body-bg"
+// }
+
+
+
+
+if(localStorage.getItem("darkmode") === 'true' ){
+  document.body.classList.add("dark")
+ 
+
 }
+
+modeBtn.addEventListener("click" , () =>{
+  document.body.classList.toggle("dark")
+  localStorage.setItem("darkmode" , document.body.classList.contains("dark"))
+})

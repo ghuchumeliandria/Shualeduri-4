@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 30px;
+  overflow-x: hidden;
 }
 main {
   max-width: 730px;
@@ -25,20 +26,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-/* ---------------------------------------------------------DARK MODE STYLES ----------------------------------------- */
-
-.white-font{
-  color: #fff;
-}
-.btn-bg{
-  background: #0079FF;
-}
-.body-bg{
-  background: #141D2F;
-}
-.content-bg{
-  background: #1E2A47;
 }
 /* -----------------------------------------------------------HEADER---------------------------------------------------- */
 
@@ -86,9 +73,12 @@ header {
   .day-mode-paragraph {
     color: #222731;
   }
-  .moon-img{
+  .moon-img {
     background-image: url(./images/dark-moon.png);
   }
+}
+body.dark .forever {
+  background-image: url(./images/forever.png);
 }
 /*----------------------------------------------------------------------- SEARCH BARRRR------------------------------------------ */
 .search-side {
@@ -114,6 +104,8 @@ header {
   border: none;
   font-size: 18px;
   letter-spacing: 2.5px;
+  background-color: transparent;
+  width: 100%;
 }
 .search-input::placeholder {
   color: #4b6a9b;
@@ -121,24 +113,23 @@ header {
 .search-input:focus {
   outline: none;
 }
-.form-btn{
+.form-btn {
   /* max-width: 220px; */
-  width: 90%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-left: 10px;
+  position: relative;
 }
-.invalid-text{
+.invalid-text {
   color: red;
-  min-width: 80px;
+  min-width: 100px;
   margin-right: 24px;
   font-weight: 700;
   display: none;
 }
 .search-btn {
-  max-width: 105px;
-  width: 100%;
+  width: 106px;
   height: 50px;
   border-radius: 10px;
   background: #0079ff;
@@ -210,7 +201,9 @@ header {
   font-weight: 400;
   line-height: normal;
 }
-.scnd-nickname,.scnd-date , .scnd-bio{
+.scnd-nickname,
+.scnd-date,
+.scnd-bio {
   display: none;
 }
 .date {
@@ -281,6 +274,24 @@ header {
   align-items: center;
   gap: 16px;
 }
+.box i {
+  font-size: 21px;
+  color: #4b6a9b;
+  transition: 0.5s;
+}
+.building {
+  background-image: url(./images/office-building-dark.png);
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+}
+.forever {
+  background-image: url(./images/forever-Dayy.png);
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  transition: 0.5s;
+}
 .box p,
 .link {
   color: #4b6a9b;
@@ -293,75 +304,170 @@ header {
   text-decoration: underline;
 }
 
-@media(max-width : 768px){
-  main{
-    max-width: 573px;
-    transition: 0.7s ;
+/* ---------------------------------------------------------DARK MODE STYLES ----------------------------------------- */
+body.dark {
+  background: #141d2f;
+}
+body.dark .header-logo {
+  color: #fff;
+}
+body.dark .git-hub-side {
+  background: #1e2a47;
+}
+body.dark .search-side {
+  background: #1e2a47;
+}
+body.dark .search-input {
+  /* background-color: transparent; */
+  background: #1e2a47;
+}
+body.dark .username {
+  color: #fff;
+}
+body.dark .date {
+  color: #ffffff93;
+}
+body.dark .bio {
+  color: #ffffff93;
+}
+.btn-bg {
+  background: #0079ff;
+}
+body.dark .day-mode-paragraph {
+  color: #fff;
+}
+body.dark .moon-img {
+  background-image: url(/images/002-sun.png);
+}
+body.dark .day-mode:hover {
+  .moon-img {
+    background-image: url(./images/002-sun.png);
   }
-  .github-description{
+  .day-mode-paragraph {
+    color: #ffffff9c;
+  }
+}
+body.dark .follow-side {
+  background: #141d2f;
+}
+body.dark .follow-paragraph {
+  color: #ffffffaa;
+}
+body.dark .follow-num {
+  color: #ffffffaa;
+}
+body.dark .color {
+  color: #f6f8ffc5;
+}
+body.dark .box i {
+  color: #ffffff;
+}
+body.dark .building {
+  background-image: url(./images/office-building.png);
+}
+body.dark .search-input {
+  color: white;
+}
+body.dark .search-input::placeholder{
+  color: #fff;
+}
+.body-bg-white {
+  background: white;
+}
+
+/* ----------------------------------------------------------------- RESPONSIVE ----------------------------------------------------- */
+@media (max-width: 768px) {
+  main {
+    max-width: 573px;
+    transition: 0.7s;
+  }
+  .github-description {
     align-items: center;
   }
-  .git-hub-side{
-    padding: 40px ;
+  .git-hub-side {
+    padding: 40px;
   }
-  .follow-side{
+  .follow-side {
     max-width: 493px;
   }
-  .github-profile{
+  .github-profile {
     align-items: center;
   }
-  .github-username-text{
+  .github-username-text {
     flex-direction: column;
   }
-  .first-bio , .frst-date ,.frst-nickname{
+  .first-bio,
+  .frst-date,
+  .frst-nickname {
     display: none;
   }
-  .scnd-bio,.scnd-date,.scnd-nickname{
+  .scnd-bio,
+  .scnd-date,
+  .scnd-nickname {
     display: block;
   }
-  
+  .invalid-text{
+    position: absolute;
+    bottom: -33px;
+    left: 2px;
+  }
 }
-@media(max-width: 620px){
-  .github-footer{
+@media (max-width: 620px) {
+  .github-footer {
     flex-direction: column;
     gap: 19px;
   }
 }
-@media(max-width: 550px){
-  body{
+@media (max-width: 550px) {
+  body {
     padding: 50px 10px;
   }
-  .search-input,.search-btn{
-    font-size: 14px;
+  .search-input,
+  .search-btn {
+    font-size: 13px;
   }
-  .git-hub-side{
+  .search-input{
+    min-width: 184px;
+  }
+  .search-btn {
+    width: 84px;
+    height: 46px;
+  }
+  .search-bar{
+    gap: 10px;
+  }
+  .search-side{
+    padding-left: 10px;
+  }
+  .git-hub-side {
     padding: 32px 24px;
   }
-  .profile-img img{
+  .profile-img img {
     width: 70px;
     height: 70px;
   }
-  .username{
+  .username {
     font-size: 16px;
   }
-  .nickname,.date{
+  .nickname,
+  .date {
     font-size: 13px;
   }
-  .scnd-bio{
+  .scnd-bio {
     font-size: 13px;
   }
-  .follow-side{
+  .follow-side {
     max-width: 379px;
-    padding: 19px  15px;
+    padding: 19px 15px;
     height: 89px;
   }
-  .follow-paragraph{
+  .follow-paragraph {
     font-size: 11px;
   }
-  .follow-num{
+  .follow-num {
     font-size: 16px;
   }
-  .follow-box{
+  .follow-box {
     text-align: center;
   }
 }
