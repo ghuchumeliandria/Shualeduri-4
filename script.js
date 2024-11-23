@@ -28,8 +28,8 @@ async function getData() {
     profilePic.src = user.avatar_url;
     nickname.textContent = `@${user.login}`;
     secondNickname.textContent = `@${user.login}`;
-    date.textContent = user.created_at;
-    secondDate.textContent = user.created_at
+    date.textContent = user.created_at.slice(0,user.created_at.length - 10);
+    secondDate.textContent = user.created_at.slice(0,user.created_at.length - 10)
     repos.textContent = user.public_repos;
     follower.textContent = user.followers;
     following.textContent = user.following;
@@ -79,8 +79,6 @@ function errorText() {
 
 
 // }
-
-
 
 
 if(localStorage.getItem("darkmode") === 'true' ){
