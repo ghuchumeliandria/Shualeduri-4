@@ -35,6 +35,14 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.sun{
+  display: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(./images/002-sun.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .header-logo {
   color: #222731;
   font-size: 26px;
@@ -56,25 +64,19 @@ header {
   letter-spacing: 2.5px;
   transition: 0.7s;
 }
-/* .day-mode-img {
-  width: 20px;
-  height: 20px;
-  } */
-.moon-img {
-  width: 20px;
-  height: 20px;
-  background-image: url(./images/moon.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+
+.fa-moon {
   transition: 0.7s;
+  font-size: 20px;
+  color: #697c9a;
 }
 .day-mode:hover {
   cursor: pointer;
   .day-mode-paragraph {
     color: #222731;
   }
-  .moon-img {
-    background-image: url(./images/dark-moon.png);
+  .fa-moon{
+    color: #222731;
   }
 }
 body.dark .forever {
@@ -336,16 +338,22 @@ body.dark .bio {
 body.dark .day-mode-paragraph {
   color: #fff;
 }
-body.dark .moon-img {
-  background-image: url(/images/002-sun.png);
+body.dark  {
+  /* background-image: url(/images/002-sun.png); */
+  .fa-moon{
+   display: none;
+  }
+  .sun{
+    display: block;
+  }
+
 }
 body.dark .day-mode:hover {
-  .moon-img {
-    background-image: url(./images/002-sun.png);
-  }
+  
   .day-mode-paragraph {
     color: #ffffff9c;
   }
+  
 }
 body.dark .follow-side {
   background: #141d2f;
