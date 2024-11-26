@@ -16,7 +16,10 @@ const git = document.getElementById("@git");
 const secondDate = document.getElementById("secondDate")
 const secondBio = document.getElementById("secondBio")
 const secondNickname = document.getElementById("secondNickname")
+const light = document.getElementById("light")
 let modeBtn = document.getElementById("modeBtn");
+light.textContent = "DARK"
+let booleanText = true;
 
 
 async function getData() {
@@ -90,4 +93,10 @@ if(localStorage.getItem("darkmode") === 'true' ){
 modeBtn.addEventListener("click" , () =>{
   document.body.classList.toggle("dark")
   localStorage.setItem("darkmode" , document.body.classList.contains("dark"))
+  if(booleanText){
+    light.textContent = "LIGHT"
+  }else{
+    light.textContent = "DARK"
+  }
+  booleanText = !booleanText
 })
